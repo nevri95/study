@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.sql.Driver;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,8 @@ public class FindElementsAW {
     public  WebDriver  driver = BasicsDriver.getDriver();
     public  WebDriverWait wait =new WebDriverWait(driver,10) ;
 
-    public void  newDriver(){
+
+    public void  newDriver() throws IOException {
         driver =BasicsDriver.getDriver();
          wait =new WebDriverWait(driver,20);
     }
@@ -104,7 +106,7 @@ public class FindElementsAW {
     }
 
 
-    public  void executejs (String js , WebDriver... args){
+    public  void executejs (String js , Object... args){
          JavascriptExecutor javascriptExecutor = (JavascriptExecutor)driver;
         javascriptExecutor.executeScript(js, args);
     }

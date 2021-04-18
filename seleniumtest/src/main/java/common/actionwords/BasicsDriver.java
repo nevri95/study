@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -20,27 +21,26 @@ import java.util.concurrent.TimeUnit;
 public class BasicsDriver {
 
     //防止浏览器变化
+
+//    public static void main(String[] args) {
+//        getDriver();
+//    }
     public static WebDriver getDriver(){
         //此处设置一个 入参环境变量 broswer
         String broswer  =Propertie.getvalue(PublicParameter.PROPERTIES_FILE,"broswerType");
-        System.out.println(broswer);
         WebDriver driver ;
         if ("Chrome".equals(broswer)){
-            System.setProperty("webdriver.chrome.driver","C:/Users/Administrator/AppData/Local/Google/Chrome/Application/chromedriver");
+            System.setProperty("webdriver.chrome.driver","C:/Users/Administrator/AppData/Local/Google/Chrome/Application/chromedriver.exe");
             driver =new ChromeDriver();
             initDriver(driver);
             return driver;
         }else if ("FireFox".equals(broswer)){
-            System.setProperty("webdriver.chrome.driver","C:/Users/Administrator/AppData/Local/Google/Chrome/Application/chromedriver");
+            System.setProperty("webdriver.chrome.driver","C:/Users/Administrator/AppData/Local/Google/Chrome/Application/chromedriver.exe");
             driver =new ChromeDriver();
             return driver;
         }
         return null;
       }
-
-    public static void main(String[] args) {
-        getDriver();
-    }
 
 
     public static   void initDriver(  WebDriver driver   ){

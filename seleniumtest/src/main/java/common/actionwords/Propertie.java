@@ -45,17 +45,21 @@ public  class Propertie extends  Properties {
 ////        writer.close();
 //    }
     //读取 *.properties 文件
-    public static String  getvalue ( String fileName , String key ){
-        try {
+    public static String  getvalue ( String fileName , String key )  {
             Properties properties = new Properties();
-            Reader reader = new FileReader(fileName);
-            properties.load(reader);
-            String value = properties.getProperty(key);
-            return value;
-        }catch (IOException e){
-            System.out.println(e);
-            return null;
+        Reader reader = null;
+        try {
+            reader = new FileReader(fileName);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        try {
+            properties.load(reader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String value = properties.getProperty(key);
+            return value;
     }
 
 

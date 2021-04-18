@@ -6,7 +6,7 @@ package common.publicConfig;
  * @Description:用于存放公共的配置项
  */
 public class PublicParameter {
-    public static final  String   PROPERTIES_FILE ="parameter.properties";
+    public static final  String   PROPERTIES_FILE ="src//main//resources//parameter.properties";
 
     public static final  String   BROSWER_TYPE ="broswerType";
     public static final  String   TEST_URL ="testUrl";

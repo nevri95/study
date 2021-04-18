@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
+import common.actionwords.BasicBusinessActions;
 import common.actionwords.FindElementsAW;
 
 
@@ -72,6 +73,12 @@ public void  testSend() {
     findElementsAW.sendKey( "//input[@class='upload-pic']","E:\\学习文件\\个人学习以及面试\\面试\\白底录肩照.jpg" );
     findElementsAW.sleep(5);
 }
+
+
+    @Test
+    public void  logIn() {
+        BasicBusinessActions.loginUrl();
+    }
 
 
 @AfterAll
