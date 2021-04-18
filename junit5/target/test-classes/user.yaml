@@ -1,0 +1,5 @@
+resultList:
+ - casename: testcasename_001
+   result: false
+ - casename: testcasename_002
+   result: true
